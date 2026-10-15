@@ -7,5 +7,9 @@ def index():
     message = "こんにちは！"
     if request.method == "POST":
         name = request.form["name"]
-        message = name + "さんこんにちは！"
-    return render_template("index.html",message=message)
+
+        if name =="":
+            message = "名前を入力してください"
+        else:
+            message = name + "さんこんにちは！"
+    return render_template("index.html",message=message) #message(html)=message(python)
