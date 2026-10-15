@@ -13,3 +13,14 @@ def index():
         else:
             message = name + "さんこんにちは！"
     return render_template("index.html",message=message) #message(html)=message(python)
+
+@app.route("/next",methods=["GET","POST"])
+def next():
+    if request.method == "POST":
+        ans = request.form["ans"]
+
+        if ans != "yes" and ans != "no":
+            ans = "回答はyesかnoで入力してください"
+    else:
+        ans = "回答を入力してください"
+    return render_template("next.html",answer=ans)

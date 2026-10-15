@@ -6,13 +6,15 @@
     </head>
     <body>
         <h1>このページは練習用です</h1>
-        <p>{{message}}flaskの練習をしています</p>
-        <form action="/" method="post">
+        <p>{{message}}</p>
+        <p>flaskの練習をしています</p>
+        <form action="/" method="post"> <!-- action="/" 入力内容の送信先を<"/">にする -->
             <label for="name" >名前</label>
             <input type="text" id="name" name="name">
             <button type="submit">送信</button>
 
         </form>
+        <a href="{{ url_for('next') }}">画面遷移</a>
     </body>
 
 
